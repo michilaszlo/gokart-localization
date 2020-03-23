@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gokart-localization</name>
+  <version>0.1.0</version>
+  <description>A template for ROS packages.</description>
+  <maintainer email="mlaszlo@student.ethz.ch">Michael Laszlo</maintainer>
+  <license>BSD</license>
+  <url type="website">https://github.com/michilaszlo/gokart-localization</url>
+
+  <author email="mlaszlo@student.ethz.ch">Michael Laszlo</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!--<depend>eigen</depend>-->
+  <!--<depend>boost</depend>-->
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <!--<depend>eigen</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>-->
+  
+</package>
