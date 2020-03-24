@@ -16,7 +16,7 @@ find_package(catkin REQUIRED
 #find_package(Eigen3 REQUIRED)
 find_package(robot_localization REQUIRED)
 find_package(pointcloud_to_laserscan REQUIRED)
-find_package(amcl REQUIRED)
+find_package(laser_scan_matcher REQUIRED)
 
 
 ###################################
@@ -48,80 +48,72 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
+#include_directories(
+#  include
+#  ${catkin_INCLUDE_DIRS}
 #  ${EIGEN3_INCLUDE_DIR}
 #  ${Boost_INCLUDE_DIRS}
-)
+#)
 
-## Declare a cpp library
-add_library(${PROJECT_NAME}_core
-   src/Algorithm.cpp
-)
 
-## Declare cpp executables
-add_executable(${PROJECT_NAME}
-  src/${PROJECT_NAME}_node.cpp
-  src/RosPackageTemplate.cpp
-)
+#)
 
 ## Add dependencies to exported targets, like ROS msgs or srvs
-add_dependencies(${PROJECT_NAME}_core
-  ${catkin_EXPORTED_TARGETS}
-)
+#add_dependencies(${PROJECT_NAME}_core
+# ${catkin_EXPORTED_TARGETS}
+#)
 
-add_dependencies(${PROJECT_NAME}
-  ${catkin_EXPORTED_TARGETS}
-)
+#add_dependencies(${PROJECT_NAME}
+#  ${catkin_EXPORTED_TARGETS}
+#)
 
 ## Specify libraries to link executable targets against
-target_link_libraries(${PROJECT_NAME}_core
-  ${catkin_LIBRARIES}
-)
+#target_link_libraries(${PROJECT_NAME}_core
+#  ${catkin_LIBRARIES}
+#)
 
-target_link_libraries(${PROJECT_NAME}
-  ${PROJECT_NAME}_core
-  ${catkin_LIBRARIES}
-)
+#target_link_libraries(${PROJECT_NAME}
+#  ${PROJECT_NAME}_core
+#  ${catkin_LIBRARIES}
+#)
 
 #############
 ## Install ##
 #############
 
 # Mark executables and/or libraries for installation
-install(
-  TARGETS ${PROJECT_NAME}
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(
+#  TARGETS ${PROJECT_NAME}
+#  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 # Mark cpp header files for installation
-install(
-  DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.hpp"
-)
+#install(
+#  DIRECTORY include/${PROJECT_NAME}/
+#  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#  FILES_MATCHING PATTERN "*.hpp"
+#)
 
 # Mark other files for installation
-install(
-  DIRECTORY doc
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+#install(
+#  DIRECTORY doc
+#  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#)
 
 #############
 ## Testing ##
 #############
 
-if(CATKIN_ENABLE_TESTING)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+#if(CATKIN_ENABLE_TESTING)
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 ## Add gtest based cpp test target and link libraries
-catkin_add_gtest(${PROJECT_NAME}-test
-  test/test_ros_package_template.cpp
-  test/AlgorithmTest.cpp)
-endif()
+#catkin_add_gtest(${PROJECT_NAME}-test
+#  test/test_ros_package_template.cpp
+#  test/AlgorithmTest.cpp)
+#endif()
 
-if(TARGET ${PROJECT_NAME}-test)
-  target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME}_core)
-endif()
+#if(TARGET ${PROJECT_NAME}-test)
+#  target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME}_core)
+#endif()
