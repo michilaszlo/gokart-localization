@@ -30,7 +30,7 @@
   </launch>
   
   
-  <!-- Launch laser_scan_matcher node -->
+  <!-- Launch laser_scan_matcher node
   <node pkg="laser_scan_matcher" type="laser_scan_matcher_node"
     name="laser_scan_matcher_node" output="screen">
 
@@ -58,7 +58,7 @@
     <param name="publish_pose_with_covariance" value="false"/>
     <param name="publish_pose_with_covariance_stamped" value="true"/>
 
-  </node>
+  </node> -->
 
   
 
